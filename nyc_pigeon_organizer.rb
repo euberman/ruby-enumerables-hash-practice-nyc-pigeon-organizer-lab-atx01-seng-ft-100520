@@ -7,8 +7,8 @@ def nyc_pigeon_organizer(data)
 end
 
 def pigeon_hash_filler(data,pigeon_hash)
-  data.each_pair { |cat_key, cat_value|
-    cat_value.each_pair { |inner_key, inner_value|
+  data.each { |cat_key, cat_value|
+    cat_value.each { |inner_key, inner_value|
       i = 0 
       while i < inner_value.length do
         pigen_hash[inner_value[i]][cat_key].push(inner_key.to_s)
@@ -16,6 +16,7 @@ def pigeon_hash_filler(data,pigeon_hash)
       end
     }
   }
+  binding.pry
   pigeon_hash
 end  
 
