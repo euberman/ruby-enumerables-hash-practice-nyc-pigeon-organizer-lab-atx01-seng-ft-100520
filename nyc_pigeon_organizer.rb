@@ -3,7 +3,6 @@ require 'pry'
 def nyc_pigeon_organizer(data)
   puts "Sending data to pigeon_hash_builder"
   pigeon_hash = pigeon_hash_builder(data)
-  binding.pry
   
   pigeon_hash_filler(data, pigeon_hash)
 end
