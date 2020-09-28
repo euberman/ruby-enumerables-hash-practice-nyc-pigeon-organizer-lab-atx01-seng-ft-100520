@@ -9,11 +9,12 @@ def nyc_pigeon_organizer(data)
 end
 
 def pigeon_hash_filler(data,pigeon_hash)
-  data.each { |cat_key, cat_value|
-    cat_value.each { |inner_key, name_list|
+  puts "Filling Pigeon Data"
+  data.each { |cat, cat_hash|
+    cat_hash.each { |sub_cat, name_list|
       i = 0 
-      while i < inner_value.length do
-        pigen_hash[inner_value[i]][cat_key].push(inner_key.to_s)
+      while i < name_list.length do
+        pigen_hash[name_list[i]][cat].push(sub_cat.to_s)
         i += 1
       end
     }
