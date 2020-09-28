@@ -1,14 +1,16 @@
 require 'pry'
 
 def nyc_pigeon_organizer(data)
+  puts "Sending data to pigeon_hash_builder"
   pigeon_hash = pigeon_hash_builder(data)
   binding.pry
+  
   pigeon_hash_filler(data,pigeon_hash)
 end
 
 def pigeon_hash_filler(data,pigeon_hash)
   data.each { |cat_key, cat_value|
-    cat_value.each { |inner_key, inner_value|
+    cat_value.each { |inner_key, name_list|
       i = 0 
       while i < inner_value.length do
         pigen_hash[inner_value[i]][cat_key].push(inner_key.to_s)
