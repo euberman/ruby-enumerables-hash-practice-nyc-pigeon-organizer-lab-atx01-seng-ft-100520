@@ -12,6 +12,7 @@ def pigeon_hash_filler(data,pigeon_hash)
       i = 0 
       while i < inner_value.length do
         pigen_hash[inner_value[i]][cat_key].push(inner_key.to_s)
+        i += 1
       end
     }
   }
@@ -19,11 +20,14 @@ def pigeon_hash_filler(data,pigeon_hash)
 end  
 
 def pigeon_hash_builder(data)
+  puts "Building Pigeon Data"
   pigeon_hash = {}
-  data[:gender].each_pair{ |key,value| 
+  data[:gender].each { |key,value| 
+    puts "Looking at #{key} with #{value}"
     i = 0
     while i < value.length do
-        pigeon_hash[value[i]] = { color:[], gender:[], lives:[] } 
+        pigeon_hash[value[i]] = { :color =>[], :gender => [], :lives => [] } 
+        i += 1
     end
   }
   
