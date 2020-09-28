@@ -5,16 +5,16 @@ def nyc_pigeon_organizer(data)
   pigeon_hash = pigeon_hash_builder(data)
   binding.pry
   
-  pigeon_hash_filler(data,pigeon_hash)
+  pigeon_hash_filler(data, pigeon_hash)
 end
 
-def pigeon_hash_filler(data,pigeon_hash)
+def pigeon_hash_filler(data, pigeon_hash)
   puts "Filling Pigeon Data"
   data.each { |cat, cat_hash|
     cat_hash.each { |sub_cat, name_list|
       i = 0 
       while i < name_list.length do
-        pigen_hash[name_list[i]][cat].push(sub_cat.to_s)
+        pigeon_hash[name_list[i]][cat].push(sub_cat.to_s)
         i += 1
       end
     }
