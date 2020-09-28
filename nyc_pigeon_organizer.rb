@@ -11,6 +11,7 @@ end
 def pigeon_hash_filler(data, pigeon_hash)
   puts "Filling Pigeon Data"
   data.each { |cat, cat_hash|
+    puts "working on #{cat} = #{cat_hash}"
     cat_hash.each { |sub_cat, name_list|
       i = 0 
       while i < name_list.length do
